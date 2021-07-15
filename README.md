@@ -14,7 +14,7 @@ So if you want to add some options or mappings ot it you can't live without comm
 
 ## zsh completion
 
-    Add the following script name `test_plugin`
+Add the following script name `test_plugin`
     
     #compdef test_plugin
     
