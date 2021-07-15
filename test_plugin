@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+TEST_DIR="/home/m/.config/nvim/plugin_testing"
+cd $TEST_DIR
+
+TEST_FILE="test_plugins.vim"
+
+# clean up previous invocations
+git checkout HEAD -- $TEST_FILE
+
+for var in "$@"
+do
+	echo "Plug '$var'" >> $TEST_FILE
+done
+
+echo "" >> $TEST_FILE
+echo "call plug#end()" >> $TEST_FILE
+
+cat $TEST_FILE
+
+cd -
+
+nvim -u $TEST_DIR/$TEST_FILE
